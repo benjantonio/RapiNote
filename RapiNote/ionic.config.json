@@ -1,0 +1,7 @@
+{
+  "name": "RapiNote",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
