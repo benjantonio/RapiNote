@@ -1,9 +1,12 @@
 
 <ion-content class="fondo">
-  <ion-card color="warning" *ngFor="let nota of notas; let i = index">
-      <ion-card-content>
-          <td class="text">{{nota.texto    }}
+  <ion-card color="warning" >
+      <ion-card-content >
+          <td class="text">Este es un mensaje
           </td>
+          
+    
+          
       </ion-card-content>
   </ion-card>
 
@@ -18,14 +21,15 @@
 
 
 
-<ion-footer style="background-color: white;" >
+<ion-footer class="footer" style="background-color: white; " >
 
-  <ion-card color="dark" style="margin: 0px 0px; border-radius: 20px;" > 
-      
-      <ion-item color="light">
-          <ion-input for="texto" id="texto" name="texto" [(ngModel)]="model.texto" placeholder="Escribir..."></ion-input>
-          <ion-button color="success" type="sumbit" (click)="agregarNota()" ><ion-icon name="checkmark-outline"></ion-icon></ion-button>
+
+    <form [formGroup]="form" (ngSubmit)="enviarMensaje()">
+      <ion-item color="light" >
+          <ion-input type="text" formControlName="mensaje" class="form-control" placeholder="Escribir..."></ion-input>
+          <ion-button [disabled]="form.invalid" color="success" type="sumbit" ><ion-icon name="caret-forward-outline"></ion-icon></ion-button>
       </ion-item>
-  </ion-card>
+    </form>
+
   
 </ion-footer>
